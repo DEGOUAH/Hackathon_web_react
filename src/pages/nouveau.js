@@ -62,7 +62,7 @@ export default function Nouveau (){
   }
     return (
       <div>
-        <h3>Modifier l'evenement</h3>
+        <h3>Ajouter un evenement</h3>
         <div>
         <div className="mb-3">
           <label>Nom de l'evenement</label>
