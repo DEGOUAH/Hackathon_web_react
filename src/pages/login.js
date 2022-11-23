@@ -26,34 +26,39 @@ export default function Login ({setToken}) {
     setToken(token);
   }
     return (
-      <form onSubmit={handleSubmit}>
-        <h3>connexion</h3>
+      <div /* className="loginContainer" */>
+        <div /* className="loginClass" */>
+        <form onSubmit={handleSubmit}>
+                <h3>connexion</h3>
 
-        <div className="mb-3">
-          <label>Email</label>
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Entrer un email"
-            onChange={e => setEmail(e.target.value)}
-          />
-        </div>
+                <div className="mb-3">
+                  <label>Email</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Entrer un email"
+                    onChange={e => setEmail(e.target.value)}
+                  />
+                </div>
 
-        <div className="mb-3">
-          <label>Mot de passe</label>
-          <input
-            type="password"
-            className="form-control"
-            placeholder="Entrer un mot de passe"
-            onChange={e => setPassword(e.target.value)}
-          />
+                <div className="mb-3">
+                  <label>Mot de passe</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Entrer un mot de passe"
+                    onChange={e => setPassword(e.target.value)}
+                  />
+                </div>
+                <div className="d-grid">
+                  <button type="submit" className="btn btn-primary">
+                    Se connecter
+                  </button>
+                </div>
+            </form>
         </div>
-        <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
-            Se connecter
-          </button>
-        </div>
-      </form>
+      </div>
+      
     )
 }
 

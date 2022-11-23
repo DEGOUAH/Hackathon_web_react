@@ -40,8 +40,8 @@ function App() {
           </div>
         </nav>
 
-        <div className="auth-wrapper">
-          <div className="auth-inner">
+        <div className="loginContainer">
+          <div className="loginClass">
             <Routes>
               <Route exact path="/" element={<Login setToken={setToken} />} />
               <Route path="/sign-in" element={<Login setToken={setToken} />} />

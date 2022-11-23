@@ -1,4 +1,4 @@
-.accueilClass h1 {
+.app h1 {
     font-family: 'Festive', cursive;
     margin: 1rem 0;
     font-size: 70px;
@@ -33,12 +33,31 @@
     border-radius: 20px;
   }
   
+  input {
+    background-color: white;
+  }
+  
   input:focus {
     outline: none;
   }
   .searchIcon svg {
     font-size: 40px;
   }
+  .multiselectContainer{
+    margin-right: 20px;
+    margin-top: 8px;
+    width: 300px;
+    border-radius: 60px;
+  }
+  
+   .searchBox { 
+      border: none;
+      font-size: 10px;
+    }
+  
+    span .chip {
+      background-color: rgb(226, 43, 43);
+    }
   
   
   
