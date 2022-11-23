@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
+import "./components/SearchBar.css";
 import FestivalData from './festivalData.json';
 import FestivalList from "./components/FestivalList";
 import Pagination from "./components/Pagination";
+import SearchBar from "./components/SearchBar";
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
+
 function App() {
    const [festivalsData, setFestivalsData] = useState([]);
    const [currentPage, setCurrentPage] = useState(1);
-   const [postsPerPage, setPostsPerPage] = useState(8);
+   const [postsPerPage, setPostsPerPage] = useState(5);
+   const [filteredData, setFilteredData] = useState(FestivalData);
+  const [wordEntered, setWordEntered] = useState("");
 
 /*   useEffect(() => {  
     const getData = async () => { 
@@ -51,15 +58,46 @@ function App() {
     }
     getData();
  },[]);
-
+ let searchWord = "";
  const lastPostIndex = currentPage * postsPerPage;
  const firstPostIndex = lastPostIndex - postsPerPage;
-  const currentPosts = FestivalData.slice(firstPostIndex, lastPostIndex);
+var currentPosts = filteredData.slice(firstPostIndex, lastPostIndex);
+
+const handleFilter = (event) => {
+  searchWord = event.target.value;
+  setWordEntered(searchWord);
+  const newFilter = FestivalData.filter((value) => {
+    return value.fields.discipline_dominante.includes(searchWord);
+  });
+  if (searchWord === "") {
+    setFilteredData(FestivalData);
+  } else {
+    setFilteredData(newFilter);
+  }
+};
+
+const clearInput = () => {
+  setFilteredData(FestivalData);
+  setWordEntered("");
+};
 
   return (
     <div className='app'>
-    <h1>Festival Gallery</h1>
-     <FestivalList festivalsData={currentPosts} />
+    <h1 className="festivalText">Festival    Galery</h1>
+    <div className="searchInputs">
+    <input
+          className="search-txt"
+          type="text"
+          placeholder="Type something"
+          value={wordEntered}
+          onChange={handleFilter}
+        />
+        <div className="searchIcon">
+            <SearchIcon />
+        </div>
+    </div>
+{/*     <SearchBar placeholder="Enter a Book Name..." data={FestivalData} />
+ */}     <FestivalList festivalsData={currentPosts} />
     <Pagination
         totalPosts={FestivalData.length}
         postsPerPage={postsPerPage}

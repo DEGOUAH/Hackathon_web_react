@@ -1,10 +1,81 @@
 .app h1 {
   margin: 1rem 0;
   font-size: 70px;
-  color: #ffe400;
+  color: #24241c;
   text-align: center;
   text-decoration: underline;
 }
+.searchInputs {
+  margin-top: 20px;
+  display: flex;
+ /*  align-items: center; */
+  justify-content: center;
+}
 
+.search-txt {
+ /*  background-color: white; */
+  border: none;
+  margin-right: 10px;
+  margin-top: 2px;
+  display: block;
+  border-radius: 25px;
+  font-size: 20px;
+  padding: 8px 40px 8px 20px;
+  border: none;
+  box-shadow: 0 5px 8px 3px black;
+  height: 30px;
+  width: 300px;
+}
+
+.searchIcon {
+  height: 60px;
+  width: 50px;
+  background-color: white;
+  display: grid;
+  place-items: center;
+}
+
+input:focus {
+  outline: none;
+}
+.searchIcon svg {
+  font-size: 35px;
+}
+
+.dataResult {
+  margin-top: 5px;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none;
+}
+
+.dataItem p {
+  margin-left: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#clearBtn {
+  cursor: pointer;
+}
+.festivalText{
+  font-family: 'Festive', cursive;
+  font-size: 60px;
+  margin-top: 10px;
+}
+h1 {
+  font-family: 'Festive', cursive;
+  font-size: 60px;
+  margin-top: 10px;
+}
 
 

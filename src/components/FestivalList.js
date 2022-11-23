@@ -8,10 +8,7 @@ const FestivalList = ({ festivalsData }) => {
             
             {
             festivalsData.map((festival) => {
-                debugger
-               for (let i = 0; i < festivalsData.length; i++) {
-                console.log(festivalsData.title + "hello" + festivalsData.length )
-              }
+             
                 return (
                     <Festival
                         // key={festival.datasetid}
