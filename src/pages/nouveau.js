@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-  
+import  "./pages.css";
 
 
 export default function Nouveau (){
@@ -61,70 +61,72 @@ export default function Nouveau (){
     }
   }
     return (
-      <div>
-        <h3>Ajouter un evenement</h3>
-        <div>
-        <div className="mb-3">
-          <label>Nom de l'evenement</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Nom de l'evenement"
-            ref={post_event}
-          />
-        </div>
-        <div className="mb-3">
-          <label>Periode principal de déroulement</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Periode principal"
-            ref={post_periode}
-          />
-          </div> 
+    
+      <div className='nouveauContainer'>
+        <div className='nouveauClass'>
+          <h3>Ajouter un evenement</h3>
+          <div>
           <div className="mb-3">
-          <label>Site internet de l'evenement</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Site internet de l'evenement"
-            ref={post_site}
-          />
-        </div>
-        <div className="mb-3">
-          <label>Adresse</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Adresse"
-            ref={post_adresse}
-          />
-           </div>
-        <div className="mb-3">
-          <label>Adresse e-mail</label>
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Adresse e-mail"
-            ref={post_email}
-          />
-        </div>
-        <div className="mb-3">
-          <label>Discipline dominante</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Discipline dominante"
-            ref={post_discipline}
-          />
-        </div>
-
-          <div className="d-grid">
-          <button className="btn btn-sm btn-primary" onClick={postData}>Ajouter l'evenement</button>
+            <label>Nom de l'evenement</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Nom de l'evenement"
+              ref={post_event}
+            />
           </div>
-          { postResult && <div className="alert alert-secondary mt-2" role="alert"><pre>{postResult}</pre></div> }
+          <div className="mb-3">
+            <label>Periode principal de déroulement</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Periode principal"
+              ref={post_periode}
+            />
+            </div> 
+            <div className="mb-3">
+            <label>Site internet de l'evenement</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Site internet de l'evenement"
+              ref={post_site}
+            />
+          </div>
+          <div className="mb-3">
+            <label>Adresse</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Adresse"
+              ref={post_adresse}
+            />
+            </div>
+          <div className="mb-3">
+            <label>Adresse e-mail</label>
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Adresse e-mail"
+              ref={post_email}
+            />
+          </div>
+          <div className="mb-3">
+            <label>Discipline dominante</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Discipline dominante"
+              ref={post_discipline}
+            />
+          </div>
+
+            <div className="d-grid">
+            <button className="btn btn-sm btn-primary" onClick={postData}>Ajouter l'evenement</button>
+            </div>
+            { postResult && <div className="alert alert-secondary mt-2" role="alert"><pre>{postResult}</pre></div> }
+          </div>
         </div>
       </div>
-
     );
 }

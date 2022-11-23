@@ -7,6 +7,7 @@ import Login from './pages/login'
 import SignUp from './pages/signup'
 import Modification from './pages/modification'
 import Nouveau from './pages/nouveau'
+import Accueil from './components/Accueil';
 
 import useToken from './useToken';
 
@@ -57,7 +58,7 @@ function App() {
       <div className="App">
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">
           <div className="container">
-            <Link className="navbar-brand" to={'/nouveau'}>
+            <Link className="navbar-brand" to={'/Accueil'}>
               Application festival
             </Link>
             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -72,20 +73,23 @@ function App() {
                     Ajouter un evenement
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={'/accueil'}>
+                    Page d'accueil
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
         </nav>
-
-        <div className="auth-wrapper">
-          <div className="auth-inner">
-            <Routes>
-              <Route exact path="/" element={<Nouveau />} />
+          <div className='routesClass'>
+            <Routes >
+              <Route exact path="/" element={<Accueil />} />
               <Route path="/modification" element={<Modification />} />
+              <Route path="/accueil" element={<Accueil />} />
               <Route path="/nouveau" element={<Nouveau />} />
             </Routes>
           </div>
-        </div>
       </div>
     </Router>
   )

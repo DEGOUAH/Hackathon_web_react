@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-  
+import  "./pages.css";
 
 
 export default function Modification (){
@@ -52,7 +52,7 @@ export default function Modification (){
     }
   }
     return (
-      <div>
+      <div className='modificationClass'>
         <h3>Modifier l'evenement</h3>
         <div>
           <div className="mb-3">
