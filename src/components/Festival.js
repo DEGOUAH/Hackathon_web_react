@@ -1,14 +1,12 @@
 import React from "react";
-/* import logo from './../logo.svg';
- */import festival from './../festival.png';
-
+import festival from './../festival.png';
 import "./Festival.css";
 
-const Festival = ({ name, discipline, commune /* title */  }) => {
+const Festival = ({ name, discipline, commune  }) => {
     return (
         <div className='card'>
             <div className='card_image'>
-                <img src={festival} /* alt={name} */ />
+                <img src={festival}  alt="festival image"  />
             </div>
             <div className='card_info'>
                 <h2>{name}</h2>

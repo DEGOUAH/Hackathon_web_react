@@ -1,4 +1,5 @@
 .app h1 {
+  font-family: 'Festive', cursive;
   margin: 1rem 0;
   font-size: 70px;
   color: #24241c;
@@ -8,12 +9,10 @@
 .searchInputs {
   margin-top: 20px;
   display: flex;
- /*  align-items: center; */
   justify-content: center;
 }
 
 .search-txt {
- /*  background-color: white; */
   border: none;
   margin-right: 10px;
   margin-top: 2px;
@@ -28,54 +27,20 @@
 }
 
 .searchIcon {
-  height: 60px;
-  width: 50px;
   background-color: white;
   display: grid;
   place-items: center;
+  border-radius: 20px;
 }
 
 input:focus {
   outline: none;
 }
 .searchIcon svg {
-  font-size: 35px;
+  font-size: 40px;
 }
 
-.dataResult {
-  margin-top: 5px;
-  width: 300px;
-  height: 200px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  overflow: hidden;
-  overflow-y: auto;
-}
 
-.dataResult::-webkit-scrollbar {
-  display: none;
-}
 
-.dataItem p {
-  margin-left: 10px;
-}
-
-a {
-  text-decoration: none;
-}
-
-#clearBtn {
-  cursor: pointer;
-}
-.festivalText{
-  font-family: 'Festive', cursive;
-  font-size: 60px;
-  margin-top: 10px;
-}
-h1 {
-  font-family: 'Festive', cursive;
-  font-size: 60px;
-  margin-top: 10px;
-}
 
 
