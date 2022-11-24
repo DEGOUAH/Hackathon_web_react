@@ -4,7 +4,8 @@ import FestivalData from './festivalData.json';
 import FestivalList from "./components/FestivalList";
 import Pagination from "./components/Pagination";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import Multiselect from "multiselect-react-dropdown";
+import Select from 'react-select';
+
 
 function Accueil() {
    const [festivalsData, setFestivalsData] = useState([]);
@@ -13,6 +14,22 @@ function Accueil() {
    const [filteredData, setFilteredData] = useState(FestivalData);
    const [wordEntered, setWordEntered] = useState("");
    const [filterOptions, setFilterOptions] = useState(["ville","genre"]);
+   const [selectedOption, setSelectedOption] = useState(null);
+
+   const data = [
+    {
+      value: 1,
+      label: "commune"
+    },
+    {
+      value: 2,
+      label: "genre"
+    }
+  ];
+
+  const handleChange = e => {
+    setSelectedOption(e);
+  }
 
   useEffect(() => {  
     const getData = async () => { 
@@ -33,7 +50,8 @@ function Accueil() {
    searchWord = event.target.value;
     setWordEntered(searchWord);
     const newFilter = FestivalData.filter((value) => {
-      return value.fields.discipline_dominante.includes(searchWord);
+      let descp = value.fields.discipline_dominante.toLowerCase();
+      return descp.includes(searchWord.toLowerCase);
     });
     if (searchWord === "") {
       setFilteredData(FestivalData);
@@ -41,27 +59,25 @@ function Accueil() {
       setFilteredData(newFilter);
     }
  };
- const onRemove = (event) => {
-
-};
-  const onSelect = (event) => {
-
-  };
 
   return (
     <div className='app'>
       <h1 className="festivalText">Festival    Galery</h1>
-      <div className="searchInputs">
-        <div className="multiselectContainer">
-        <Multiselect
-          displayValue="key"
-          isObject={false}
-          onRemove={onRemove}
-          onSelect={onSelect}
-          options={filterOptions}
-          showCheckbox
+      <div className="selectClass">
+      <Select
+        placeholder="Select Option"
+        value={data.find(x => x.label === selectedOption) } // set selected value
+        options={data} // set list of the data
+        onChange={handleChange} // assign onChange function
       />
-        </div>
+      </div>
+      <Select
+        placeholder="Select Option"
+        value={data.find(x => x.label === selectedOption) } // set selected value
+        options={data} // set list of the data
+        onChange={handleChange} // assign onChange function
+      />
+      <div className="searchInputs">
           <input
                 className="search-txt"
                 type="text"

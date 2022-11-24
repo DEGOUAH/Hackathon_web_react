@@ -31,7 +31,7 @@ export default function Accueil() {
    searchWord = event.target.value;
     setWordEntered(searchWord);
     const newFilter = FestivalData.filter((value) => {
-      return value.fields.discipline_dominante.includes(searchWord);
+      return value.fields.discipline_dominante.toLowerCase().includes(searchWord);
     });
     if (searchWord === "") {
       setFilteredData(FestivalData);
