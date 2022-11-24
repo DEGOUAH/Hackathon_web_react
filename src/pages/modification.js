@@ -52,7 +52,8 @@ export default function Modification (){
     }
   }
     return (
-      <div className='modificationClass'>
+      <div className='modificationContainer'>
+        <div className='modificationClass'>
         <h3>Modifier l'evenement</h3>
         <div>
           <div className="mb-3">
@@ -73,6 +74,7 @@ export default function Modification (){
           </div>
           { postResult && <div className="alert alert-secondary mt-2" role="alert"><pre>{postResult}</pre></div> }
         </div>
+      </div>
       </div>
     );
 }

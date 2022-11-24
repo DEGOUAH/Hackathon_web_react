@@ -15,6 +15,7 @@ const FestivalList = ({ festivalsData }) => {
                         discipline={festival.fields.discipline_dominante}
                         name={festival.fields.nom_du_festival}
                         commune={festival.fields.commune_principale_de_deroulement}
+                        id={festival.recordid}
                         /* title= {festival.Title} */
                     />
                 );

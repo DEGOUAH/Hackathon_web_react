@@ -8,6 +8,7 @@ import SignUp from './pages/signup'
 import Modification from './pages/modification'
 import Nouveau from './pages/nouveau'
 import Accueil from './components/Accueil';
+import Details from './components/Details';
 
 import useToken from './useToken';
 
@@ -64,11 +65,6 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to={'/modification'}>
-                    Modifier un evenement
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link className="nav-link" to={'/nouveau'}>
                     Ajouter un evenement
                   </Link>
@@ -88,6 +84,7 @@ function App() {
               <Route path="/modification" element={<Modification />} />
               <Route path="/accueil" element={<Accueil />} />
               <Route path="/nouveau" element={<Nouveau />} />
+              <Route path="/details/:id" element={<Details />} />
             </Routes>
           </div>
       </div>

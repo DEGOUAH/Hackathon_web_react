@@ -41,7 +41,7 @@ export default function Accueil() {
  };
 
   return (
-    <div className='app'>
+    <div className='accueilClass'>
       <h1 className="festivalText">Festival    Galery</h1>
       <div className="searchInputs">
           <input
