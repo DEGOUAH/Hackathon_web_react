@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+/* import React, { useEffect, useState } from "react";
 import './Accueil.css';
 import FestivalData from './festivalData.json';
 import FestivalList from "./components/FestivalList";
@@ -101,3 +101,4 @@ function Accueil() {
 }
 
 export default Accueil;
+ */
