@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import FestivalData from './../festivalData.json';
 import festival from './../festival.png';
 import "./Festival.css";
 import { Link, useParams } from 'react-router-dom'
 
-const Details = (props) => {
+const Details = () => {
     const params = useParams();
     const [detailsId, setDetailsId] = useState(params.id);
     let detailsData = FestivalData.filter((value) => {
         return value.recordid.includes(detailsId);
       });
-debugger
-
-/* useEffect(() => {  
-   setDetailsId(params.id);
-   detailsData = FestivalData.filter((value) => {
-    return value.recordid.includes(detailsId);
-  });
- },[]); */
 
     return (
         <div className='card' onClick={onclick}>
@@ -30,10 +22,6 @@ debugger
                 <h2><span className="description">Commune : </span>{detailsData[0].fields.nom_du_festival}</h2>
                 <h2><span className="description">Departement ;</span>{detailsData[0].fields.departement_principal_de_deroulement}</h2>
                 <h2><span className="description">Site web ; </span>{detailsData[0].fields.site_internet_du_festival}</h2>           
-              {/*   <h2>{FestivalData.fields.annee_de_creation_du_festival}</h2> */}
-               {/*  <h2>{name}</h2>
-                <h3><span className="description">Genre : </span>{discipline}</h3>
-                <h3><span className="description">Ville : </span>{commune}</h3> */}
                 <div className="btnModifContainer">
                 <Link className="btnModif" to={'/Accueil'}>
                     Accueil

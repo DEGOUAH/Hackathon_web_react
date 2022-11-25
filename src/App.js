@@ -7,7 +7,7 @@ import Login from './pages/login'
 import SignUp from './pages/signup'
 import Modification from './pages/modification'
 import Nouveau from './pages/nouveau'
-import Accueil from './components/Accueil';
+import Accueil from './pages/Accueil';
 import Details from './components/Details';
 
 import useToken from './useToken';
